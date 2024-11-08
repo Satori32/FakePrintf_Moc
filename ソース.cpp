@@ -50,6 +50,7 @@ bool Printf(const char* Str, VariavleArgment& Arg) {
 	size_t P = 0;
 	size_t A = 0;
 	for (size_t i = 0; i < L; i++) {
+		if (A >= Size(Arg.Arg)) { break; }//end of args const.
 		if (Str[i] == '%') { Str[i] = '\0'; i=DoCommand(Str, Str[i + 1], *Index(Arg.Arg, A); A++; }
 	}
 

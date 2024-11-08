@@ -60,8 +60,9 @@ bool Printf(const char* Str, VariavleArgment& Arg) {
 int main() {
 	TypeAndValue T[3] = { ConstructTypeAndValue<char>('A'),ConstructTypeAndValue<int>(16),ConstructTypeAndValue<short>(0xbeef) };
 	VariavleArgment V = ConstructVariableArgment(ConstructVector(T, sizeof(T)));
+	const char* S ="A=%c 16=%d beef=%d";
 
-	Printf("A=%c 16=%d beef=%d", V);
+	Printf(S, V);
 
 	return 0;
 }

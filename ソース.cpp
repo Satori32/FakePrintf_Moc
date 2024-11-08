@@ -55,7 +55,7 @@ bool Printf(const char* Str, VariavleArgment& Arg) {
 		A[P] = Str[i];
 	}
 
-	return puts(Str)!=EOF;
+	return puts(A)!=EOF;
 }
 
 int main() {

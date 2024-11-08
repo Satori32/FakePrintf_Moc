@@ -34,7 +34,7 @@ size_t DoCommand(const char* S, char C, TypeAndValue& T) {
 	char PA[3] = { '%',C,'\0'};
 	char SS[10240] = { 0, };
 
-	sprintf(SS, PA,T.Value);
+	sprintf(SS, PA,T.Value);//you can do it to try replace this line.
 	//size_t L = strlen(S);
 	//size_t N = strlen(SS);
 	char* X =strcat(S, SS);

@@ -35,8 +35,8 @@ size_t DoCommand(const char* S, char C, TypeAndValue& T) {
 	char SS[10240] = { 0, };
 
 	sprintf(SS, PA,T.Value);
-	size_t L = strlen(S);
-	size_t N = strlen(SS);
+	//size_t L = strlen(S);
+	//size_t N = strlen(SS);
 	char* X =strcat(S, SS);
 
 	return strlen(X);

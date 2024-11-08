@@ -44,14 +44,15 @@ size_t DoCommand(const char* S, char C, TypeAndValue& T) {
 
 bool Printf(const char* Str, VariavleArgment& Arg) {
 	char* A[10240] = { 0, };//you can be it to optimize the size.
-	char* B[10240] = { 0, };
+	//char* B[10240] = { 0, };
 
 	size_t L = strlen(Str);
 	size_t P = 0;
-	size_t A = 0;
+	size_t AA = 0;
 	for (size_t i = 0; i < L; i++) {
-		if (A >= Size(Arg.Arg)) { break; }//end of args const.
-		if (Str[i] == '%') { Str[i] = '\0'; i=DoCommand(Str, Str[i + 1], *Index(Arg.Arg, A); A++; }
+		if (AA >= Size(Arg.Arg)) { break; }//end of args const.
+		if (Str[i] == '%') { Str[i] = '\0'; P = DoCommand(A, Str[i + 1], *Index(Arg.Arg, AA); AA++; i++; continue; }
+		A[P] = Str[i];
 	}
 
 	return puts(Str)!=EOF;

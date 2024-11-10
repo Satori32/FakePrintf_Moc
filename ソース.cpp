@@ -52,13 +52,15 @@ bool Printf(const char* Str, VariavleArgment& Arg) {
 	size_t L = strlen(Str);
 	size_t P = 0;
 	size_t AA = 0;
+	bool F = false;
 	for (size_t i = 0; i < L; i++) {
 		if (AA >= Size(Arg.Arg)) { break; }//end of args const.
 		if (Str[i] == '%') { Str[i] = '\0'; P = DoCommand(A, Str[i + 1], *Index(Arg.Arg, AA)); AA++; i++; continue; }
 		A[P++] = Str[i];
+		F = true;
 	}
-
-	return puts(A)!=EOF;
+	char* P = F ? A : Str;
+	return puts(P)!=EOF;
 }
 
 bool FindCh(char C) {
